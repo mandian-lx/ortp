@@ -17,6 +17,7 @@ Patch0:		ortp-ppcfix.patch
 BuildRequires:	glib2-devel
 %endif
 BuildRequires:	gtk-doc
+BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 oRTP is a LGPL licensed C library implementing the RTP protocol
