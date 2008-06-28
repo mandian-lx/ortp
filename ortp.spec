@@ -7,7 +7,7 @@
 Summary:	Real-time Transport Protocol Stack
 Name:		ortp
 Version:	0.10.0
-Release:	%mkrel 4
+Release:	%mkrel 5
 License:	LGPL
 Group:		Communications
 URL:		http://linphone.org/ortp/
@@ -49,7 +49,7 @@ HP-UX), and Microsoft Windows.
 This package contains header files and development libraries needed to
 develop programs using the oRTP library.
 
-#%define ortp_cflags %ortp_arch_cflags -Wall -g -pipe -pthread -O3 -fomit-frame-pointer -fno-schedule-insns -fschedule-insns2 -fstrict-aliasing
+#define ortp_cflags %ortp_arch_cflags -Wall -g -pipe -pthread -O3 -fomit-frame-pointer -fno-schedule-insns -fschedule-insns2 -fstrict-aliasing
 
 %prep
 %setup -q
