@@ -86,7 +86,6 @@ rm -rf %{buildroot}
 
 %files -n %{libnamedev}
 %defattr(-,root,root,-)
-%doc docs/html
 %doc AUTHORS COPYING ChangeLog INSTALL README TODO
 %{_libdir}/*.la
 %{_libdir}/*.a
