@@ -95,7 +95,7 @@ rm -rf %{buildroot}
 %{_includedir}/%{name}
 #%if %ortp_glib
 # `--enable-gtk-doc' does not work : cannot be disabled
-%{_docdir}/ortp/html
+#%{_docdir}/ortp/html
 #%endif
 
 
