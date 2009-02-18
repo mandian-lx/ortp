@@ -1,14 +1,14 @@
 %define ortp_glib 1
 
-%define major 5
+%define major 8
 %define libname %mklibname %{name} %{major}
-%define libnamedev %mklibname %{name} %{major} -d
+%define libnamedev %mklibname %{name} -d
 
 Summary:	Real-time Transport Protocol Stack
 Name:		ortp
-Version:	0.13.1
+Version:	0.15.0
 Release:	%mkrel 1
-License:	LGPL
+License:	LGPLv2+
 Group:		Communications
 URL:		http://linphone.org/ortp/
 Source0:	http://www.linphone.org/ortp/sources/%{name}-%{version}.tar.gz
@@ -17,6 +17,7 @@ Patch0:		ortp-ppcfix.patch
 BuildRequires:	glib2-devel
 %endif
 BuildRequires:	gtk-doc
+BuildRequires:	openssl-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -40,6 +41,7 @@ Group:          Development/Other
 Provides:	%{name}-devel = %{version}
 Provides:	lib%{name}-devel = %{version}
 Requires:       %{libname} = %{version}
+Obsoletes:      %{libname}5-devel
 
 %description -n %{libnamedev}
 oRTP is a LGPL licensed C library implementing the RTP protocol
@@ -53,7 +55,7 @@ develop programs using the oRTP library.
 
 %prep
 %setup -q
-%patch0 -p0
+#%patch0 -p0
 
 %build
 %configure2_5x \
@@ -61,7 +63,9 @@ develop programs using the oRTP library.
     --enable-static \
     --enable-glib \
     --enable-glibtest \
-    --enable-gtk-doc
+    --enable-gtk-doc \
+    --enable-ipv6
+
 %make  
 #CXXFLAGS="%ortp_cflags"
 
@@ -82,7 +86,7 @@ rm -rf %{buildroot}
 
 %files -n %{libname}
 %defattr(-,root,root,-)
-%{_libdir}/*.so.*
+%{_libdir}/*.so.%{major}*
 
 %files -n %{libnamedev}
 %defattr(-,root,root,-)
@@ -92,10 +96,10 @@ rm -rf %{buildroot}
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}
-#%if %ortp_glib
+%if %ortp_glib
 # `--enable-gtk-doc' does not work : cannot be disabled
-#%{_docdir}/ortp/html
-#%endif
+%{_docdir}/%{name}/%{name}-%{version}/html
+%endif
 
 
 
