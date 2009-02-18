@@ -18,6 +18,7 @@ BuildRequires:	glib2-devel
 %endif
 BuildRequires:	gtk-doc
 BuildRequires:	openssl-devel
+BuildRequires:	doxygen
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
