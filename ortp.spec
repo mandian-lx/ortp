@@ -7,12 +7,13 @@
 Summary:	Real-time Transport Protocol Stack
 Name:		ortp
 Version:	0.16.1
-Release:	%mkrel 1
+Release:	%mkrel 2
 License:	LGPLv2+
 Group:		Communications
 URL:		http://linphone.org/ortp/
 Source0:	http://www.linphone.org/ortp/sources/%{name}-%{version}.tar.gz
 Patch0:		ortp-ppcfix.patch
+Patch1:		ortp_stun_rand.patch
 %if %ortp_glib
 BuildRequires:	glib2-devel
 %endif
@@ -57,6 +58,7 @@ develop programs using the oRTP library.
 %prep
 %setup -q
 #%patch0 -p0
+%patch1 -p1
 
 %build
 %configure2_5x \
