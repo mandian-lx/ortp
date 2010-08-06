@@ -6,13 +6,13 @@
 
 Summary:	Real-time Transport Protocol Stack
 Name:		ortp
-Version:	0.16.1
-Release:	%mkrel 4
+Version:	0.16.3
+Release:	%mkrel 1
 License:	LGPLv2+
 Group:		Communications
 URL:		http://linphone.org/ortp/
-Source0:	http://www.linphone.org/ortp/sources/%{name}-%{version}.tar.gz
-Patch0:		ortp-ppcfix.patch
+Source0:	http://download.savannah.gnu.org/releases-noredirect/linphone/ortp/sources/%{name}-%{version}.tar.gz
+Source1:	http://download.savannah.gnu.org/releases-noredirect/linphone/ortp/sources/%{name}-%{version}.tar.gz.sig
 Patch1:		ortp_stun_rand.patch
 %if %ortp_glib
 BuildRequires:	glib2-devel
@@ -57,7 +57,6 @@ develop programs using the oRTP library.
 
 %prep
 %setup -q
-#%patch0 -p0
 %patch1 -p1
 
 %build
@@ -103,6 +102,3 @@ rm -rf %{buildroot}
 # `--enable-gtk-doc' does not work : cannot be disabled
 %{_docdir}/%{name}/%{name}-%{version}/html
 %endif
-
-
-
