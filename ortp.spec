@@ -66,14 +66,14 @@ develop programs using the oRTP library.
     --enable-glib \
     --enable-glibtest \
     --enable-gtk-doc \
+    --enable-strict=no \
     --enable-ipv6
 
 %make  
-#CXXFLAGS="%ortp_cflags"
 
 %install
 rm -rf %{buildroot}
-%makeinstall
+%makeinstall_std
 
 %if %mdkversion < 200900
 %post -n %{libname} -p /sbin/ldconfig
