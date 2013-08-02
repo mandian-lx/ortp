@@ -1,11 +1,11 @@
-%define major 8
+%define major 9
 %define libname %mklibname %{name} %{major}
 %define libnamedev %mklibname %{name} -d
 
 Summary:	Real-time Transport Protocol Stack
 Name:		ortp
-Version:	0.18.0
-Release:	2
+Version:	0.22.0
+Release:	1
 License:	LGPLv2+
 Group:		Communications
 URL:		http://linphone.org/ortp/
@@ -66,7 +66,7 @@ develop programs using the oRTP library.
 %{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
 %{_includedir}/%{name}
-%{_docdir}/%{name}/%{name}-%{version}
+%{_docdir}/%{name}-%{version}
 
 %changelog
 * Wed Feb 01 2012 Andrey Bondrov <abondrov@mandriva.org> 0.18.0-1mdv2012.0
