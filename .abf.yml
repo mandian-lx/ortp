@@ -1,3 +1,5 @@
-sources:
+removed_sources:
   ortp-0.22.0.tar.gz: 3f4712307ceba27c6498abd2090f411e02084dbd
-  ortp-0.22.0.tar.gz.sig: 03dd96cb8c6846ba118b2d71b463e78b967db853
+sources:
+  ortp-0.23.0.tar.gz: 87a154295636652cc9ac7310dc02e0258db08790
+  ortp-0.23.0.tar.gz.sig: 7087b901d733e136243e7c86ab26ff26c19f682c
