@@ -1,11 +1,11 @@
-%define major 9
+%define major 10
 %define libname %mklibname %{name} %{major}
 %define devname %mklibname %{name} -d
 
 Summary:	Real-time Transport Protocol Stack
 Name:		ortp
-Version:	0.23.0
-Release:	3
+Version:	0.25.0
+Release:	1
 License:	LGPLv2+
 Group:		Communications
 Url:		http://linphone.org/ortp/
