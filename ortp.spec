@@ -9,6 +9,7 @@ Release:	1
 License:	LGPLv2+
 Group:		Communications
 Url:		http://linphone.org/ortp/
+#Source0:	https://github.com/BelledonneCommunications/%{name}/archive/%{version}/%{name}-%{version}.tar.gz
 Source0:	http://download.savannah.gnu.org/releases-noredirect/linphone/ortp/sources/%{name}-%{version}.tar.gz
 Source1:	http://download.savannah.gnu.org/releases-noredirect/linphone/ortp/sources/%{name}-%{version}.tar.gz.sig
 BuildRequires:	doxygen
