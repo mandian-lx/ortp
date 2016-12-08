@@ -1,0 +1,20 @@
+--- ortp-0.27.0/CMakeLists.txt.orig
++++ ortp-0.27.0/CMakeLists.txt
+@@ -191,11 +191,12 @@
+ 
+ 
+ set(prefix ${CMAKE_INSTALL_PREFIX})
+-set(exec_prefix ${prefix}/bin)
+-set(libdir ${prefix}/lib)
+-set(includedir ${prefix}/include)
++set(exec_prefix ${CMAKE_INSTALL_PREFIX})
++set(libdir ${CMAKE_INSTALL_FULL_LIBDIR})
++set(includedir ${CMAKE_INSTALL_FULL_INCLUDEDIR})
+ set(ORTP_PKGCONFIG_VERSION "${ORTP_VERSION}")
+-set(ORTPDEPS_LIBS )
++set(ORTPDEPS_LIBS "${PTHREAD_LIBS} ${CMAKE_THREAD_LIBS_INIT} -l${BCTOOLBOX_LIBRARIES}")
++set(ORTPDEPS_CFLAGS "-D_REENTRANT")
+ 
+ configure_file(${CMAKE_CURRENT_SOURCE_DIR}/ortp.pc.in ${CMAKE_CURRENT_BINARY_DIR}/ortp.pc)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/ortp.pc DESTINATION "${CMAKE_INSTALL_LIBDIR}/pkgconfig")
+
