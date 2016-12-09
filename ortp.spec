@@ -18,6 +18,7 @@ Source1:	http://download.savannah.gnu.org/releases-noredirect/linphone/%{name}/s
 Patch0:		%{name}-0.27.0-pkgconfig.patch
 
 BuildRequires:	cmake
+BuildRequires:	cmake(BcToolbox)
 BuildRequires:	doxygen
 #BuildRequires:	pkgconfig(openssl)
 
